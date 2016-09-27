@@ -4,36 +4,40 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
-  <title>Code Jam 2008 Round 1A | watchdog</title>
+  <title>Code Jam Round 1A | watchdog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   
     <meta name="author" content="watchdog">
   
   
-    <meta name="description" content="categories:
+    <meta name="description" content="Problem A. Minium Scalar Product
+给定两个向量v1=(x1,x2,…xn)和v2=(y1,y2,…yn)，适当调整向量内部的顺序，使得他们的数量积最小、最大
 
-算法tags:
-Code Jam">
+分析 
+贪心，对向量升序，最小值和最大值分别对应于两者顺序相乘和逆序相乘">
   
-  <meta name="description" content="categories:
+  <meta name="description" content="Problem A. Minium Scalar Product
+给定两个向量v1=(x1,x2,…xn)和v2=(y1,y2,…yn)，适当调整向量内部的顺序，使得他们的数量积最小、最大
 
-算法tags:
-Code Jam">
+分析 
+贪心，对向量升序，最小值和最大值分别对应于两者顺序相乘和逆序相乘">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Code Jam 2008 Round 1A">
+<meta property="og:title" content="Code Jam Round 1A">
 <meta property="og:url" content="http://yoursite.com/2016/09/14/Code-Jam-2008-Round-1A/index.html">
 <meta property="og:site_name" content="watchdog">
-<meta property="og:description" content="categories:
+<meta property="og:description" content="Problem A. Minium Scalar Product
+给定两个向量v1=(x1,x2,…xn)和v2=(y1,y2,…yn)，适当调整向量内部的顺序，使得他们的数量积最小、最大
 
-算法tags:
-Code Jam">
-<meta property="og:updated_time" content="2016-09-14T13:17:52.452Z">
+分析 
+贪心，对向量升序，最小值和最大值分别对应于两者顺序相乘和逆序相乘">
+<meta property="og:updated_time" content="2016-09-27T04:30:15.565Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Code Jam 2008 Round 1A">
-<meta name="twitter:description" content="categories:
+<meta name="twitter:title" content="Code Jam Round 1A">
+<meta name="twitter:description" content="Problem A. Minium Scalar Product
+给定两个向量v1=(x1,x2,…xn)和v2=(y1,y2,…yn)，适当调整向量内部的顺序，使得他们的数量积最小、最大
 
-算法tags:
-Code Jam">
+分析 
+贪心，对向量升序，最小值和最大值分别对应于两者顺序相乘和逆序相乘">
   
     <link rel="alternate" href="/atom.xml" title="watchdog" type="application/atom+xml">
   
@@ -72,25 +76,41 @@ Code Jam">
     
       <div class="icon"></div>
       <a href="/2016/09/14/Code-Jam-2008-Round-1A/">
-  <time datetime="2016-09-14T13:14:37.000Z">
+  <time datetime="2016-09-14T13:14:37.239Z">
     2016-09-14
   </time>
 </a>
     
     
   
-    <h1 class="title">Code Jam 2008 Round 1A</h1>
+    <h1 class="title">Code Jam Round 1A</h1>
   
 
   </header>
   
   <div class="entry">
     
-      <p>categories:</p>
-<ul>
-<li>算法<br>tags:</li>
-<li>Code Jam</li>
-</ul>
+      <h4 id="Problem-A-Minium-Scalar-Product"><a href="#Problem-A-Minium-Scalar-Product" class="headerlink" title="Problem A. Minium Scalar Product"></a>Problem A. Minium Scalar Product</h4><blockquote>
+<p>给定两个向量v<sub>1</sub>=(x<sub>1</sub>,x<sub>2</sub>,…x<sub>n</sub>)和v2=(y<sub>1</sub>,y<sub>2</sub>,…y<sub>n</sub>)，适当调整向量内部的顺序，使得他们的数量积最小、最大</p>
+</blockquote>
+<p><em>分析</em> </p>
+<p>贪心，对向量升序，最小值和最大值分别对应于两者顺序相乘和逆序相乘</p>
+<a id="more"></a>
+<h4 id="Problem-B-Milkshakes"><a href="#Problem-B-Milkshakes" class="headerlink" title="Problem B. Milkshakes"></a>Problem B. Milkshakes</h4><blockquote>
+<p>你有N种不同的奶昔可供用户选择，每种奶昔可以被调制成0或1，同时有M个顾客，每个人对不同的奶昔有不同的喜 好，并且最多只喜欢一种奶昔，问是否存在一种奶昔的调制方案，使得所有用户都可以被满足</p>
+</blockquote>
+<p><em>分析</em></p>
+<p>此题的突破点在于每个顾客最多只喜欢一种奶昔</p>
+<ol>
+<li>从所有奶昔都被调制成0开始，遍历所有用户</li>
+<li>如果一个用户的奶昔偏好都是0，但是这些奶昔目前都被调制成了1，那么不存在调制方案</li>
+<li>如果存在一个用户<font color="red" face="黑体">仅</font>喜欢一个奶昔，<font color="red" face="黑体">且</font>偏好为1，那么该奶昔就必须调制成1</li>
+<li>如果所有用户都满足，则得到一个方案</li>
+</ol>
+<p>上述的关键在于，将一个奶昔调制成1后，不会再回溯将其调制成0了，因为这是强制的操作</p>
+<h4 id="Problem-C-Numbers"><a href="#Problem-C-Numbers" class="headerlink" title="Problem C. Numbers"></a>Problem C. Numbers</h4><blockquote>
+<p>计算(3+&radic;5)<sup>n</sup>的整数部分的末3位，比如(3+&radic;5)<sup>5</sup>=3935.73982，答案是935</p>
+</blockquote>
 
     
   </div>
@@ -118,15 +138,7 @@ Code Jam">
   <ul class="entry">
     
       <li>
-        <a href="/2016/09/27/Markdown/">Markdown</a>
-      </li>
-    
-      <li>
-        <a href="/2016/09/14/Code-Jam-2008-Round-1A/">Code Jam 2008 Round 1A</a>
-      </li>
-    
-      <li>
-        <a href="/2016/09/14/hello-world/">Hello World</a>
+        <a href="/2016/09/14/Code-Jam-2008-Round-1A/">Code Jam Round 1A</a>
       </li>
     
   </ul>
